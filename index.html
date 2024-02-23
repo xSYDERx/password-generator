@@ -9,27 +9,71 @@
   <title>Password generator app</title>
 </head>
 <body>
+  <div class="container">
 
-  <h1>
-    Password Generator
-  </h1>
+    <h1>
+      Password Generator
+    </h1>
 
-  <div>
     <div>
-      <input type="text" name="password" id="password_field" placeholder="P4$5W0rD!">
+      <div class="password_field">P4$5W0rD!</div>
+      <img src="assets/images/icon-copy.svg" alt="Copy Password">
     </div>
-  
-  
-    Character Length
-  
-    Include Uppercase Letters
-    Include Lowercase Letters
-    Include Numbers
-    Include Symbols
-  
-    Strength
-  
-    Generate
+    
+      <div class="slider_n_char_lenght">
+        <div class="char_lenght">
+          <p>
+            Character Length
+          </p>
+          <p><span id="slider-lenght"></span></p>
+        </div>
+
+        <div class="slidecontainer">
+          <input type="range" min="1" max="20" value="1" class="slider" id="myRange">
+        </div>
+      </div>
+
+    <div id="checkboxes">
+      <div>
+        <input type="checkbox" name="" id="">
+        <label>Include Uppercase Letters</label>
+      <div>
+        <input type="checkbox" name="" id="">
+        <label>Include Lowercase Letters</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="">
+        <label>Include Numbers</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="">
+        <label>Include Symbols</label>
+      </div>
+    </div>
+
+    <div id="strength">
+      <p>
+        Strength
+      </p>
+      <div id="strength_parameter">
+        <p id="weakness"></p>
+        <span id="rectangle_one">
+        </span>
+        <span id="rectangle_two">
+        </span>
+        <span id="rectangle_three">
+        </span>
+        <span id="rectangle_four">
+        </span>
+      </div>
+    </div>
+
+    <div id="gen_button">
+      <p>
+        Generate
+      </p>
+      <img src="assets/images/icon-arrow-right.svg" alt="Arrow">
+    </div>
   </div>
 
   <script type="module" src="/main.js"></script>
