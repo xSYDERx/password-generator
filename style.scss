@@ -1,96 +1,263 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+//Variables
+$almostWhite: #E6E5EA;
+$grey: #817D92;
+$dark: #24232C;
+$verydark: #18171F;
+$tooweak: #F64A4A;
+$weak: #FB7C58;
+$strong: #F8CD65;
+$lightgreen: #A4FFAF;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('./assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+textarea {
+  pointer-events: none;
+  color: none;
+  background-color: transparent;
+  border: 0;
+  resize: none;
+  color: $almostWhite;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  background-color: $verydark;
+  font-family: 'JetBrainsMono', monospace;
+  color: $almostWhite;
+
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container{
+  margin: 0 auto;
+  width: 30%;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-size: 1.2em;
+  margin-bottom: 3.2rem;
   text-align: center;
+  color: $grey;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.password_div {
+  display: flex;
+  flex-direction: row;
+  background-color: $dark;
+  padding: 4%;
+  justify-content: space-between;
 }
 
-.card {
-  padding: 2em;
+.password_field {
+  font-size: 1.3rem;
+  text-align: left;
 }
 
-.read-the-docs {
-  color: #888;
+.password_div img {
+  width: 5%;
+  
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+#copy {
+  fill: $lightgreen;
+}
+
+#copy:hover {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  fill: $almostWhite;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.parameters-div{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 86%;
+  padding: 7%;
+  margin-top: 5%;
+  background-color: $dark;
+}
+
+.char_lenght {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+#slider-lenght {
+  color: $lightgreen;
+  font-size: 1.5em;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  background: $verydark;
+  background-image: linear-gradient($lightgreen, $lightgreen);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid $almostWhite;
+  border-radius: 50%;
+  background-color: $almostWhite;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border: 2px solid $lightgreen;
+  background-color: $verydark;
+}
+
+.slider::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.slider::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid $almostWhite;
+  border-radius: 50%;
+  background-color: $almostWhite;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb:hover,
+.slider::-moz-range-thumb:active {
+  border: 2px solid $lightgreen;
+  background-color: $verydark;
+}
+
+.password-strength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $verydark;
+  padding: 4%;
+}
+
+.strength-title {
+  font-size: 1rem;
+  color: $grey;
+}
+
+.strength-value {
+  display: flex;
+  gap: 0.8rem;
+  
+}
+
+.strength-status {
+  font-size: 1.3em;
+}
+
+.custom_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  border: 2px solid $almostWhite;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: url('./assets/images/icon-check.svg');
+    display: none;
+    height: 10px; 
   }
-  a:hover {
-    color: #747bff;
+
+  &:checked {
+    background-color: $lightgreen;
+    border: 0;
   }
-  button {
-    background-color: #f9f9f9;
+
+  &:checked {
+    background-color: $lightgreen;
+    border: 0;
+
+    &::after {
+      display: block;
+    }
+  }
+}
+
+#rectangles {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+#rectangle_one, #rectangle_two, #rectangle_three, #rectangle_four{
+  border: 1px solid $almostWhite;
+  width: 0.5rem;
+  height: 1.3rem;
+  background: transparent;
+}
+
+#gen_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $dark;
+
+  width: 100%;
+  padding: 1rem 0;
+  border: 2px solid $lightgreen;
+  background-color: $lightgreen;
+  cursor: pointer;
+
+  svg {
+    fill: $dark;
+  }
+}
+
+#gen_button:hover {
+  color: $lightgreen;
+  background-color: $dark;
+  svg {
+    fill: $lightgreen;
   }
 }
